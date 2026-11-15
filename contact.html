@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Student: Muhammad Huzaifa | Roll No: 26I-3229 | Section: E -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chai Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Consistent multi-page navbar links */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange-dark);
+            font-weight: 700;
+        }
+        .subpage-header {
+            padding-top: 40px;
+            max-width: 650px;
+        }
+
+        /* Contact form layout extending .order-panel and form controls */
+        .contact-panel {
+            align-items: flex-start;
+        }
+        .contact-panel > div:first-child {
+            max-width: 380px;
+        }
+        .contact-form {
+            display: grid;
+            gap: 14px;
+            width: 100%;
+            max-width: 520px;
+        }
+        .form-group {
+            display: grid;
+            gap: 6px;
+        }
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--brown);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font: inherit;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: white;
+            color: var(--brown);
+            width: 100%;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: 2px solid var(--orange);
+            border-color: var(--orange);
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+        .contact-detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+            display: grid;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .contact-detail-list strong {
+            color: var(--brown);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <a class="brand" href="index.html">Chai Corner</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Order</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a class="active" href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <div class="subpage-header">
+            <p class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p>
+            <h1>Drop By or <span>Say Hello.</span></h1>
+            <p class="intro">Have a question about our menu, want to reserve a table for your group, or just want to share feedback? Reach out anytime.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <p class="eyebrow">VISIT OR REACH OUT</p>
+            <h2>Contact Information</h2>
+            <p class="section-intro">Find us near campus for fresh chai, evening snacks, and warm hospitality.</p>
+
+            <!-- 3-Column Contact Info Cards reusing .menu-grid and .menu-card -->
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="food-icon">📍</div>
+                    <h3>Our Location</h3>
+                    <p>Main Food Street, Sector G-12<br>Near NUST Metro Station, Islamabad</p>
+                    <strong>Easy Campus Access</strong>
+                </article>
+
+                <article class="menu-card">
+                    <div class="food-icon">📞</div>
+                    <h3>Phone &amp; Email</h3>
+                    <p>Phone: +92 300 5550192<br>Email: hello@chaicorner.pk</p>
+                    <strong>Quick Responses</strong>
+                </article>
+
+                <article class="menu-card">
+                    <div class="food-icon">⏰</div>
+                    <h3>Opening Hours</h3>
+                    <p>Monday – Saturday: 8:00 AM – 12:00 AM<br>Sunday: 10:00 AM – 12:00 AM</p>
+                    <strong>Open Late for Chai Breaks</strong>
+                </article>
+            </div>
+
+            <!-- Contact Form Panel reusing .order-panel and .order-controls -->
+            <div class="order-panel contact-panel">
+                <div>
+                    <p class="eyebrow">SEND A MESSAGE</p>
+                    <h2>Get in touch</h2>
+                    <p>Fill out the form with your details or group booking inquiry, and our team will get back to you shortly.</p>
+                    <ul class="contact-detail-list">
+                        <li><strong>Group Bookings:</strong> Available for 6+ guests</li>
+                        <li><strong>Takeaway Orders:</strong> Ready in 10–15 mins</li>
+                    </ul>
+                </div>
+
+                <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); sendMessage();">
+                    <div class="form-group">
+                        <label for="visitor-name">Full Name</label>
+                        <input type="text" id="visitor-name" placeholder="e.g., Muhammad Huzaifa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitor-email">Email Address</label>
+                        <input type="email" id="visitor-email" placeholder="e.g., name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-topic">Topic</label>
+                        <select id="inquiry-topic">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Table Reservation">Table Reservation</option>
+                            <option value="Feedback & Suggestions">Feedback &amp; Suggestions</option>
+                            <option value="Catering / Group Order">Catering / Group Order</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitor-message">Message</label>
+                        <textarea id="visitor-message" placeholder="Write your message or reservation details here..." required></textarea>
+                    </div>
+
+                    <button type="button" onclick="sendMessage()">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chai Corner · Made for good moments</p>
+        <p class="student">Created by Muhammad Huzaifa | 26I-3229</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            const nameInput = document.getElementById("visitor-name").value.trim();
+            const emailInput = document.getElementById("visitor-email").value.trim();
+            const topicInput = document.getElementById("inquiry-topic").value;
+            const messageInput = document.getElementById("visitor-message").value.trim();
+
+            if (!nameInput || !emailInput || !messageInput) {
+                window.alert("Please fill in your name, email address, and message before sending.");
+                return;
+            }
+
+            window.alert(
+                "Thank you, " + nameInput + "! Your message regarding '" + topicInput + "' has been received by Chai Corner."
+            );
+
+            console.log("Contact form submitted:", {
+                name: nameInput,
+                email: emailInput,
+                topic: topicInput,
+                message: messageInput
+            });
+
+            document.getElementById("contact-form").reset();
+        }
+    </script>
+</body>
+</html>
