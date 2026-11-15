@@ -33,5 +33,5 @@ A modern café website designed to showcase café products, atmosphere, menu ite
 [View the GitHub Repository](https://github.com/muhammad-huzaifa-co/cafe)
 
 ## Live Website
-[Visit the Cafe Website](https://muhammad-huzaifa-co.github.io/cafe/)
+[Visit the Cafe Website](https://muhammad-huzaifa-co.github.io/cafe/index.html)
 
