@@ -6,12 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chai Corner</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Multi-page navbar links matching subpages */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange-dark);
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
         <nav class="navbar">
-            <a class="brand" href="#">Chai Corner</a>
-            <span class="tagline">A little break, a lot of comfort.</span>
+            <a class="brand" href="index.html">Chai Corner</a>
+            <div class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
         <div class="hero-content">
             <div>
@@ -30,24 +55,25 @@
             <h2>Our Menu</h2>
             <p class="section-intro">Simple favourites for your tea-time cravings.</p>
 
+            <!-- 3 Signature Favourites matching menu.html -->
             <div class="menu-grid">
                 <article class="menu-card">
                     <div class="food-icon">☕</div>
                     <h3>Classic Doodh Patti</h3>
-                    <p>Strong tea simmered with milk.</p>
+                    <p>Strong tea leaves simmered slowly in full-cream milk for a rich, velvety cup.</p>
                     <strong>Rs. 180</strong>
                 </article>
                 <article class="menu-card">
                     <div class="food-icon">🥪</div>
                     <h3>Club Sandwich</h3>
-                    <p>Toasted bread with a tasty filling.</p>
+                    <p>Triple-layered toasted bread stacked with grilled chicken, egg, cheese, and house sauce.</p>
                     <strong>Rs. 450</strong>
                 </article>
                 <article class="menu-card">
-                    <div class="food-icon">🍟</div>
-                    <h3>Masala Fries</h3>
-                    <p>Crispy fries with our house seasoning.</p>
-                    <strong>Rs. 250</strong>
+                    <div class="food-icon">🫓</div>
+                    <h3>Aloo Cheese Paratha</h3>
+                    <p>Flaky whole-wheat paratha stuffed with spiced mashed potatoes and melted cheddar.</p>
+                    <strong>Rs. 320</strong>
                 </article>
             </div>
 
@@ -58,10 +84,15 @@
                         <tr><th>Item</th><th>Category</th><th>Price</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Classic Doodh Patti</td><td>Drinks</td><td>Rs. 180</td></tr>
-                        <tr><td>Green Tea</td><td>Drinks</td><td>Rs. 150</td></tr>
-                        <tr><td>Club Sandwich</td><td>Snacks</td><td>Rs. 450</td></tr>
-                        <tr><td>Masala Fries</td><td>Snacks</td><td>Rs. 250</td></tr>
+                        <tr><td>Classic Doodh Patti</td><td>Chai &amp; Hot Drinks</td><td>Rs. 180</td></tr>
+                        <tr><td>Karak Elaichi Chai</td><td>Chai &amp; Hot Drinks</td><td>Rs. 200</td></tr>
+                        <tr><td>Peshawari Green Tea</td><td>Chai &amp; Hot Drinks</td><td>Rs. 150</td></tr>
+                        <tr><td>Club Sandwich</td><td>Dhaba Snacks</td><td>Rs. 450</td></tr>
+                        <tr><td>Masala Fries</td><td>Dhaba Snacks</td><td>Rs. 250</td></tr>
+                        <tr><td>Aloo Samosa Platter</td><td>Dhaba Snacks</td><td>Rs. 220</td></tr>
+                        <tr><td>Aloo Cheese Paratha</td><td>Parathas &amp; Bites</td><td>Rs. 320</td></tr>
+                        <tr><td>Anda Paratha Roll</td><td>Parathas &amp; Bites</td><td>Rs. 280</td></tr>
+                        <tr><td>Glazed Chai Donut</td><td>Parathas &amp; Bites</td><td>Rs. 190</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -70,15 +101,20 @@
                 <div>
                     <p class="eyebrow">READY FOR A BREAK?</p>
                     <h2>Order your favourite</h2>
-                    <p>Choose an item and try the button.</p>
+                    <p>Choose an item and try the button, or visit our <a href="menu.html" style="color: var(--orange-dark); font-weight: 600;">Full Menu</a> page.</p>
                 </div>
                 <div class="order-controls">
                     <label for="item-choice">Select an item</label>
                     <select id="item-choice">
                         <option>Classic Doodh Patti</option>
-                        <option>Green Tea</option>
+                        <option>Karak Elaichi Chai</option>
+                        <option>Peshawari Green Tea</option>
                         <option>Club Sandwich</option>
                         <option>Masala Fries</option>
+                        <option>Aloo Samosa Platter</option>
+                        <option>Aloo Cheese Paratha</option>
+                        <option>Anda Paratha Roll</option>
+                        <option>Glazed Chai Donut</option>
                     </select>
                     <button type="button" onclick="placeOrder()">Order Now</button>
                 </div>
