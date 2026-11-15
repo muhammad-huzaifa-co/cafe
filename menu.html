@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Student: Muhammad Huzaifa | Roll No: 26I-3229 | Section: E -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Chai Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Minimal additions to support multi-page nav links and category filtering */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange-dark);
+            font-weight: 700;
+        }
+        .subpage-header {
+            padding-top: 40px;
+            max-width: 650px;
+        }
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .filter-btn {
+            background: var(--cream);
+            color: var(--brown);
+            border: 1px solid var(--line);
+            font-weight: 600;
+            padding: 9px 18px;
+        }
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--brown);
+            color: white;
+            border-color: var(--brown);
+        }
+        .category-block {
+            margin-top: 48px;
+        }
+        .category-block:first-of-type {
+            margin-top: 28px;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange-dark);
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <a class="brand" href="index.html">Chai Corner</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a class="active" href="menu.html">Menu</a>
+                <a href="order.html">Order</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <div class="subpage-header">
+            <p class="eyebrow">FRESHLY BREWED &amp; MADE TO ORDER</p>
+            <h1>Our Full <span>Dhaba Menu.</span></h1>
+            <p class="intro">From slow-simmered doodh patti to crisp evening snacks and stuffed parathas—crafted for long conversations and quick campus breaks.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <p class="eyebrow">BROWSE BY CRAVING</p>
+            <h2>Signature Favourites</h2>
+            <p class="section-intro">Filter by category or explore our complete list of freshly prepared items.</p>
+
+            <div class="filter-bar" role="group" aria-label="Menu Categories">
+                <button type="button" class="filter-btn active" onclick="filterMenu('all', this)">All Items</button>
+                <button type="button" class="filter-btn" onclick="filterMenu('chai', this)">Chai &amp; Hot Drinks</button>
+                <button type="button" class="filter-btn" onclick="filterMenu('snacks', this)">Dhaba Snacks</button>
+                <button type="button" class="filter-btn" onclick="filterMenu('parathas', this)">Parathas &amp; Bites</button>
+            </div>
+
+            <!-- Category 1: Chai & Hot Drinks -->
+            <div class="category-block" data-category="chai">
+                <h3>Chai &amp; Hot Drinks</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="food-icon">☕</div>
+                        <span class="badge">House Special</span>
+                        <h3>Classic Doodh Patti</h3>
+                        <p>Strong tea leaves simmered slowly in full-cream milk for a rich, velvety cup.</p>
+                        <strong>Rs. 180</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🫖</div>
+                        <span class="badge">Aromatic</span>
+                        <h3>Karak Elaichi Chai</h3>
+                        <p>Bold, spiced black tea infused with freshly crushed green cardamom pods.</p>
+                        <strong>Rs. 200</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🍵</div>
+                        <span class="badge">Light &amp; Soothing</span>
+                        <h3>Peshawari Green Tea</h3>
+                        <p>Fragrant kahwa brewed with cardamom and a hint of lemon and honey.</p>
+                        <strong>Rs. 150</strong>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Category 2: Dhaba Snacks -->
+            <div class="category-block" data-category="snacks">
+                <h3>Dhaba Snacks</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="food-icon">🥪</div>
+                        <span class="badge">Bestseller</span>
+                        <h3>Club Sandwich</h3>
+                        <p>Triple-layered toasted bread stacked with grilled chicken, egg, cheese, and house sauce.</p>
+                        <strong>Rs. 450</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🍟</div>
+                        <span class="badge">Crispy</span>
+                        <h3>Masala Fries</h3>
+                        <p>Golden hand-cut fries tossed in our tangy house chaat masala, served with mint chutney.</p>
+                        <strong>Rs. 250</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🥟</div>
+                        <span class="badge">Tea-Time Classic</span>
+                        <h3>Aloo Samosa Platter</h3>
+                        <p>Two flaky, crisp samosas filled with spiced potatoes, peas, and tamarind dip.</p>
+                        <strong>Rs. 220</strong>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Category 3: Parathas & Sweet Bites -->
+            <div class="category-block" data-category="parathas">
+                <h3>Parathas &amp; Sweet Bites</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="food-icon">🫓</div>
+                        <span class="badge">Fresh Off The Tawa</span>
+                        <h3>Aloo Cheese Paratha</h3>
+                        <p>Flaky whole-wheat paratha stuffed with spiced mashed potatoes and melted cheddar.</p>
+                        <strong>Rs. 320</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🍳</div>
+                        <span class="badge">All-Day Breakfast</span>
+                        <h3>Anda Paratha Roll</h3>
+                        <p>Crispy lachha paratha wrapped around a masala omelette with onions and green chutney.</p>
+                        <strong>Rs. 280</strong>
+                    </article>
+
+                    <article class="menu-card">
+                        <div class="food-icon">🍩</div>
+                        <span class="badge">Sweet Treat</span>
+                        <h3>Glazed Chai Donut</h3>
+                        <p>Soft, warm cinnamon-sugar donut made to dip straight into your evening cup of chai.</p>
+                        <strong>Rs. 190</strong>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Complete Price Table -->
+            <h3 class="table-heading">Complete Price List</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Category</th>
+                            <th>Serving</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Classic Doodh Patti</td><td>Chai &amp; Hot Drinks</td><td>1 Cup</td><td>Rs. 180</td></tr>
+                        <tr><td>Karak Elaichi Chai</td><td>Chai &amp; Hot Drinks</td><td>1 Cup</td><td>Rs. 200</td></tr>
+                        <tr><td>Peshawari Green Tea</td><td>Chai &amp; Hot Drinks</td><td>1 Cup</td><td>Rs. 150</td></tr>
+                        <tr><td>Club Sandwich</td><td>Dhaba Snacks</td><td>4 Pieces + Fries</td><td>Rs. 450</td></tr>
+                        <tr><td>Masala Fries</td><td>Dhaba Snacks</td><td>Regular Basket</td><td>Rs. 250</td></tr>
+                        <tr><td>Aloo Samosa Platter</td><td>Dhaba Snacks</td><td>2 Pieces</td><td>Rs. 220</td></tr>
+                        <tr><td>Aloo Cheese Paratha</td><td>Parathas &amp; Bites</td><td>1 Full Paratha + Raita</td><td>Rs. 320</td></tr>
+                        <tr><td>Anda Paratha Roll</td><td>Parathas &amp; Bites</td><td>1 Roll</td><td>Rs. 280</td></tr>
+                        <tr><td>Glazed Chai Donut</td><td>Parathas &amp; Bites</td><td>1 Piece</td><td>Rs. 190</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Call to Action Panel -->
+            <div class="order-panel">
+                <div>
+                    <p class="eyebrow">CRAVING SOMETHING NOW?</p>
+                    <h2>Ready to place your order?</h2>
+                    <p>Build your custom order with live bill calculation on our Order page.</p>
+                </div>
+                <div class="order-controls">
+                    <a class="menu-link" href="order.html" style="text-align: center; margin-top: 0;">Go to Order Page</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chai Corner · Made for good moments</p>
+        <p class="student">Created by Muhammad Huzaifa | 26I-3229</p>
+    </footer>
+
+    <script>
+        function filterMenu(category, clickedButton) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            clickedButton.classList.add('active');
+
+            const blocks = document.querySelectorAll('.category-block');
+            blocks.forEach(block => {
+                if (category === 'all' || block.getAttribute('data-category') === category) {
+                    block.style.display = 'block';
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
