@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Student: Muhammad Huzaifa | Roll No: 26I-3229 | Section: E -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Chai Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Consistent multi-page navbar links */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange-dark);
+            font-weight: 700;
+        }
+        .subpage-header {
+            padding-top: 40px;
+            max-width: 650px;
+        }
+
+        /* Gallery figure & image styling reusing .menu-grid and .menu-card */
+        .gallery-card {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+        .gallery-card:hover {
+            transform: translateY(-4px);
+        }
+        .gallery-img-wrap {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .gallery-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-img-wrap img.svg-contain {
+            object-fit: contain;
+            padding: 18px;
+        }
+        .gallery-card figcaption strong {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--brown);
+            margin-bottom: 4px;
+        }
+        .gallery-card figcaption p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <a class="brand" href="index.html">Chai Corner</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Order</a>
+                <a class="active" href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <div class="subpage-header">
+            <p class="eyebrow">SNAPSHOTS FROM OUR DHABA</p>
+            <h1>Warm Cups &amp; <span>Cozy Corners.</span></h1>
+            <p class="intro">A closer look at our freshly simmered chai, crisp evening snacks, and the relaxed atmosphere that brings friends together.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <p class="eyebrow">LIFE AT CHAI CORNER</p>
+            <h2>Our Gallery</h2>
+            <p class="section-intro">Six everyday moments from our kitchen and outdoor seating.</p>
+
+            <!-- 6-Image Responsive Grid (3 columns on desktop, 1 column on mobile via .menu-grid) -->
+            <div class="menu-grid">
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img class="svg-contain" src="images/chai-cup.svg" alt="Steaming cup of Classic Doodh Patti">
+                    </div>
+                    <figcaption>
+                        <strong>Morning Doodh Patti</strong>
+                        <p>Our signature strong tea simmered slowly in fresh milk to start the day right.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="images/doodh-patti-kettle.jpg" onerror="this.classList.add('svg-contain'); this.src='images/chai-cup.svg';" alt="Traditional kettle pouring hot chai into ceramic cups">
+                    </div>
+                    <figcaption>
+                        <strong>Fresh Off The Stove</strong>
+                        <p>Poured piping hot straight from the kettle for every table order.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="images/club-sandwich-platter.jpg" onerror="this.classList.add('svg-contain'); this.src='images/chai-cup.svg';" alt="Toasted triple-layer club sandwich with golden fries">
+                    </div>
+                    <figcaption>
+                        <strong>Toasted Club Sandwich</strong>
+                        <p>Crispy golden layers paired with house sauce for a hearty campus lunch.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="images/masala-fries-basket.jpg" onerror="this.classList.add('svg-contain'); this.src='images/chai-cup.svg';" alt="Basket of crispy masala fries with mint chutney">
+                    </div>
+                    <figcaption>
+                        <strong>House Masala Fries</strong>
+                        <p>Crunchy hand-cut fries tossed in our special spice blend and served with mint dip.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="images/tawa-paratha.jpg" onerror="this.classList.add('svg-contain'); this.src='images/chai-cup.svg';" alt="Flaky golden aloo paratha served warm">
+                    </div>
+                    <figcaption>
+                        <strong>Crispy Tawa Parathas</strong>
+                        <p>Rolled and roasted fresh on the griddle—best enjoyed alongside karak elaichi chai.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="menu-card gallery-card">
+                    <div class="gallery-img-wrap">
+                        <img src="images/evening-dhaba-seating.jpg" onerror="this.classList.add('svg-contain'); this.src='images/chai-cup.svg';" alt="Warm evening lighting at Chai Corner outdoor seating">
+                    </div>
+                    <figcaption>
+                        <strong>Evening Conversations</strong>
+                        <p>Our cozy outdoor seating area where late-afternoon study breaks turn into long talks.</p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="order-panel">
+                <div>
+                    <p class="eyebrow">HUNGRY AFTER BROWSING?</p>
+                    <h2>Taste it for yourself</h2>
+                    <p>Explore the full menu or place a quick order for your next break.</p>
+                </div>
+                <div class="order-controls">
+                    <a class="menu-link" href="menu.html" style="text-align: center; margin-top: 0;">Explore Full Menu</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chai Corner · Made for good moments</p>
+        <p class="student">Created by Muhammad Huzaifa | 26I-3229</p>
+    </footer>
+</body>
+</html>
