@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Student: Muhammad Huzaifa | Roll No: 26I-3229 | Section: E -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <a class="brand" href="#">Chai Corner</a>
+            <span class="tagline">A little break, a lot of comfort.</span>
+        </nav>
+        <div class="hero-content">
+            <div>
+                <p class="eyebrow">WELCOME TO OUR DHABA</p>
+                <h1>Good chai.<br><span>Good conversations.</span></h1>
+                <p class="intro">Freshly prepared favourites, served with warmth. Find your next comfort-food stop at Chai Corner.</p>
+                <a class="menu-link" href="#menu">Explore the menu</a>
+            </div>
+            <img class="hero-image" src="images/chai-cup.svg" alt="Illustration of a cup of chai">
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="menu">
+            <p class="eyebrow">MADE FRESH FOR YOU</p>
+            <h2>Our Menu</h2>
+            <p class="section-intro">Simple favourites for your tea-time cravings.</p>
+
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="food-icon">☕</div>
+                    <h3>Classic Doodh Patti</h3>
+                    <p>Strong tea simmered with milk.</p>
+                    <strong>Rs. 180</strong>
+                </article>
+                <article class="menu-card">
+                    <div class="food-icon">🥪</div>
+                    <h3>Club Sandwich</h3>
+                    <p>Toasted bread with a tasty filling.</p>
+                    <strong>Rs. 450</strong>
+                </article>
+                <article class="menu-card">
+                    <div class="food-icon">🍟</div>
+                    <h3>Masala Fries</h3>
+                    <p>Crispy fries with our house seasoning.</p>
+                    <strong>Rs. 250</strong>
+                </article>
+            </div>
+
+            <h3 class="table-heading">Full Price List</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Item</th><th>Category</th><th>Price</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Classic Doodh Patti</td><td>Drinks</td><td>Rs. 180</td></tr>
+                        <tr><td>Green Tea</td><td>Drinks</td><td>Rs. 150</td></tr>
+                        <tr><td>Club Sandwich</td><td>Snacks</td><td>Rs. 450</td></tr>
+                        <tr><td>Masala Fries</td><td>Snacks</td><td>Rs. 250</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order-panel">
+                <div>
+                    <p class="eyebrow">READY FOR A BREAK?</p>
+                    <h2>Order your favourite</h2>
+                    <p>Choose an item and try the button.</p>
+                </div>
+                <div class="order-controls">
+                    <label for="item-choice">Select an item</label>
+                    <select id="item-choice">
+                        <option>Classic Doodh Patti</option>
+                        <option>Green Tea</option>
+                        <option>Club Sandwich</option>
+                        <option>Masala Fries</option>
+                    </select>
+                    <button type="button" onclick="placeOrder()">Order Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Chai Corner · Made for good moments</p>
+        <p class="student">Created by Muhammad Huzaifa | 26I-3229</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
